@@ -35,7 +35,8 @@ var backpack_size:int = 10
 
 
 var equipment:Dictionary = {
-	"head": head,
+	#  placeholder
+	# "head": head,
 	"body": body,
 	"main_hand": main_hand,
 	"0ff_hand": off_hand
