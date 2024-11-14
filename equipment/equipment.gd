@@ -45,6 +45,16 @@ const swords := {
     },
 }
 
+const empty := {
+    "hand": {
+        "name":"hand",
+        "price": 0,
+        "size":"",
+        "weight": 0,
+        "dmg":"1d2",
+    },
+}
+
 
 const armor:={
     "no_armor": {

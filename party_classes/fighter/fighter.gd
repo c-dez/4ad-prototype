@@ -16,7 +16,7 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 
 	if Input.is_action_just_pressed("Key_e"):
-		print(sheet.body," " , sheet.main_hand.name)
+		print(sheet.get_ac())
 
 
 

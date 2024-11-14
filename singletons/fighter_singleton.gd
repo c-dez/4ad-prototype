@@ -25,7 +25,7 @@ var cha_as:int = 12
 
 var str_bonus:int
 
-var head := {}
+# var head := {}
 var body := EquipmentTables.armor.leather_armor
 var main_hand := EquipmentTables.swords.short_sword
 var off_hand := EquipmentTables.armor.shield
@@ -52,6 +52,15 @@ func _ready():
 	# dmg = main_hand.dmg
 	pass
 
+func get_ac()->int:
+	# revisa si esta shield equipado en off hand y agrega el ac al total ac, si no solo regresa el ac de armadura
+	var result:int
+	if off_hand.name == "shield" :
+		result = body.ac + off_hand.ac
+		return result
+	else:
+		result = body.ac
+		return result			
 
 
 	
