@@ -25,45 +25,31 @@ var cha_as:int = 12
 
 var str_bonus:int
 
-# var head := {}
 var body := EquipmentTables.armor.leather_armor
 var main_hand := EquipmentTables.swords.short_sword
 var off_hand := EquipmentTables.armor.shield
 
 var backpack_size:int = 10
+# var backpack:Array = [
 
-
-
-var equipment:Dictionary = {
-	#  placeholder
-	# "head": head,
-	"body": body,
-	"main_hand": main_hand,
-	"0ff_hand": off_hand
-}
-
-var backpack:Array = [
-
-]
+# ]
 
 func _ready():
-	atk_bonus = CharacterTablesSingleton.atk_bonus_fighter(lvl)
-	str_bonus = CharacterTablesSingleton.ability_score_bonus(str_as)
 
-	# dmg = main_hand.dmg
 	pass
 
 func get_ac()->int:
 	# revisa si esta shield equipado en off hand y agrega el ac al total ac, si no solo regresa el ac de armadura
-	var result:int
 	if off_hand.name == "shield" :
-		result = body.ac + off_hand.ac
-		return result
+		return body.ac + off_hand.ac
 	else:
-		result = body.ac
-		return result			
-
-
+		return body.ac
 	
+func get_str_bonus()->int:
+	return CharacterTablesSingleton.ability_score_bonus(str_as)
+
+func get_atk_bonus()->int:
+	return CharacterTablesSingleton.atk_bonus_fighter(lvl)
+
 	
 	
