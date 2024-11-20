@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="4AD-Prototype"
-run/main_scene="res://party_classes/fighter/fighter.tscn"
+run/main_scene="res://world.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 FighterSingleton="*res://singletons/fighter_singleton.gd"
 CharacterTablesSingleton="*res://singletons/character_tables.gd"
 EquipmentTables="*res://equipment/equipment.gd"
+
+[display]
+
+window/size/initial_position_type=0
 
 [input]
 
