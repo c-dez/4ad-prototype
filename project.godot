@@ -25,6 +25,12 @@ EquipmentTables="*res://equipment/equipment.gd"
 
 window/size/initial_position_type=0
 
+[file_customization]
+
+folder_colors={
+"res://logic/": "pink"
+}
+
 [input]
 
 Key_e={

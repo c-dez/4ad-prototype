@@ -11,6 +11,7 @@ var hp_base:int = 8
 
 var dmg:String
 var ac:int
+var movement_points:int = 5
 
 var atk_bonus:int = 0
 var lvl:int = 1
