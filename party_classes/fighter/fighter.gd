@@ -1,17 +1,16 @@
 extends CharacterBody2D
 
 @onready var tile := get_node("../TileMapLayer")
-
-var current_tile_position:=Vector2i(Vector2i.ZERO)
-
+var current_tile_position: = Vector2i(Vector2i.ZERO)
 # puntos de movimiento
-var movement_points = FighterSingleton.movement_points
-var movement_points_counter:int =0
+var movement_points:= FighterSingleton.movement_points
+var movement_points_counter:int = 0
 
-func _process(_delta: float) -> void:
-	current_tile_position = tile.local_to_map(global_position)
+func _physics_process(_delta: float) -> void:
+	set_current_tile_position()
 	move_input()
 	pass
+
 func move(direction:Vector2):
 	# get current tile
 	var current_tile:Vector2i = tile.local_to_map(global_position)
@@ -22,6 +21,9 @@ func move(direction:Vector2):
 	)
 	global_position = tile.map_to_local(target_tile)
 	movement_points_manager(movement_points)
+
+func set_current_tile_position()->void:
+	current_tile_position = tile.local_to_map(global_position)
 
 func move_input()->void:
 	if movement_points_counter < movement_points:		
@@ -40,7 +42,7 @@ func move_input()->void:
 # por ejemplo
 # current_pos (5,5) debe detectar casillas ()
 
-func movement_points_manager(_movement_points:int):
+func movement_points_manager(_movement_points:int)->void:
 	# funcion para moverse un numero limitado de veces / movement_points points
 	# poder ejecutar la funcion move un numero de veces igual a _movement_points
 	if movement_points_counter < _movement_points:
